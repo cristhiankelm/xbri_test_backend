@@ -90,6 +90,7 @@ O projeto já inclui um usuário administrador criado pelo seeder. Você pode us
 
 As tabelas principais do banco de dados são:
 
+- users (admins do sistema)
 - clients
 - categories
 - products
