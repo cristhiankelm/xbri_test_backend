@@ -22,11 +22,10 @@ class AuthController extends Controller
             return response()->json([
                 'user' => Auth::user(),
                 'token' => Auth::user()
-                    ->createToken('default')
+                    ->createToken('token')
                     ->plainTextToken,
             ]);
         }
-
 
         return response()->json([
             'message' => 'Os dados informados não conferem!',
@@ -45,9 +44,6 @@ class AuthController extends Controller
 
         // Excluir todos os tokens do usuário
         $user->tokens()->delete();
-
-        // Excluir somente o token atual
-        // $user->currentAccessToken()->delete();
 
         return response()->json([
             'message' => 'Usuário desconectado',

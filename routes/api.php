@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,11 @@ Route::name('api.')->group(function () {
         Route::get('/logout', 'logout')->name('logout')->middleware('auth:sanctum');
     });
 
+    // Rotas para dashboard
+    Route::controller(DashboardController::class)
+    ->group(function () {
+        Route::get('/dashboard', 'index')->name('dashboard');
+    });
 
     // Rotas para crud clientes
     Route::controller(ClientController::class)
