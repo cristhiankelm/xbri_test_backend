@@ -23,6 +23,7 @@ class OrderFactory extends Factory
             'client_id' => Client::factory(),
             'total_amount' => $this->faker->randomFloat(2, 50, 1000),
             'status' => $this->faker->randomElement(['pending', 'completed', 'cancelled']),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }
