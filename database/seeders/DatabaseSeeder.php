@@ -42,12 +42,12 @@ class DatabaseSeeder extends Seeder
                     'category_id' => $category->id,
                 ])->each(function ($product) use ($client, $adminUser) {
                     // Criar 2 pedidos para cada cliente
-                    Order::factory(4)->create([
+                    Order::factory(2)->create([
                         'client_id' => $client->id,
                         'user_id' => $adminUser->id,
                     ])->each(function ($order) use ($product) {
                         // Criar 3 itens do pedido para cada pedido
-                        OrderItem::factory(3)->create([
+                        OrderItem::factory(2)->create([
                             'order_id' => $order->id,
                             'product_id' => $product->id,
                         ]);
