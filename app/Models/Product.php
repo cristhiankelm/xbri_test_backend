@@ -16,14 +16,16 @@ class Product extends Model
         'name',
         'description',
         'price',
-        'stock_quantity'
+        'stock_quantity',
     ];
 
+    // Relation with Category
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
+    // Relation with OrderItem
     public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class);
