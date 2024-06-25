@@ -57,16 +57,16 @@ DB_PASSWORD=password
 
 https://laravel.com/docs/11.x/sail#installing-sail-into-existing-applications
 
-### 5. Gerar a Chave da Aplicação
-
-```bash
-sail artisan key:generate
-```
-
-### 6. Iniciar o Servidor de Desenvolvimento
+### 5. Iniciar o Servidor de Desenvolvimento
 
 ```bash
 sail up -d
+```
+
+### 6. Gerar a Chave da Aplicação
+
+```bash
+sail artisan key:generate
 ```
 
 ### 7. Rodar as Migrations e Seeders
