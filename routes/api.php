@@ -18,6 +18,7 @@ Route::name('api.')->group(function () {
     Route::controller(DashboardController::class)
     ->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
+        Route::get('/dashboard/sales-data', 'getSalesDataForChart')->name('getSalesDataForChart');
     });
 
     // Rotas para crud clientes
