@@ -101,4 +101,9 @@ As tabelas principais do banco de dados são:
 ## Links úteis
 link draw.io -> https://drive.google.com/file/d/1QJpx4sDfYC4f-mmqDLouVbWVHJIJ3tOj/view?usp=sharing
 
-link postman -> 
+link postman -> https://drive.google.com/file/d/1js2I5XGaGCwfUx30Zovsf8jHU6y8_ca_/view?usp=sharing
+
+Para garantir que o sistema retorne os controles de erro corretamente nas requisições feitas pelo Postman, adicione o seguinte cabeçalho (header) às suas requisições:
+```bash
+Accept: application/json
+```

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Chamar AdminUserSeeder para criar o usuário administrador
         $this->call([
             AdminUserSeeder::class,
         ]);
@@ -33,15 +34,15 @@ class DatabaseSeeder extends Seeder
         );
 
         // Criar 10 clientes para o usuário administrador
-        Client::factory(10)->create()->each(function ($client) use ($adminUser) {
+        Client::factory(15)->create()->each(function ($client) use ($adminUser) {
             // Criar 3 categorias
-            Category::factory(3)->create()->each(function ($category) use ($client, $adminUser) {
+            Category::factory(5)->create()->each(function ($category) use ($client, $adminUser) {
                 // Criar 5 produtos para cada categoria
-                Product::factory(5)->create([
+                Product::factory(10)->create([
                     'category_id' => $category->id,
                 ])->each(function ($product) use ($client, $adminUser) {
                     // Criar 2 pedidos para cada cliente
-                    Order::factory(2)->create([
+                    Order::factory(4)->create([
                         'client_id' => $client->id,
                         'user_id' => $adminUser->id,
                     ])->each(function ($order) use ($product) {
