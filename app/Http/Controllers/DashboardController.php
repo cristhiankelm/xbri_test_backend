@@ -49,6 +49,7 @@ class DashboardController extends Controller
             ];
         });
 
+        // Retornar os dados para o dashboard
         return response()->json([
             'total_sales' => $totalSales,
             'monthly_sales' => $monthlySales,
@@ -62,6 +63,7 @@ class DashboardController extends Controller
         ]);
     }
 
+    // Retorna os dados para o gráfico de vendas
     public function getSalesDataForChart()
     {
         $currentYear = Carbon::now()->year;
